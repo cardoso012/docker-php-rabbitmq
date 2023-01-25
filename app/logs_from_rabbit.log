@@ -1,0 +1,8 @@
+
+Fatal error: Uncaught PhpAmqpLib\Exception\AMQPProtocolChannelException: PRECONDITION_FAILED - inequivalent arg 'x-dead-letter-exchange' for queue 'custom.myqueue' in vhost '/': received none but current is the value '' of type 'longstr' in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AMQPChannel.php:224
+Stack trace:
+#0 [internal function]: PhpAmqpLib\Channel\AMQPChannel->channel_close(Object(PhpAmqpLib\Wire\AMQPBufferReader))
+#1 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(214): call_user_func(Array, Object(PhpAmqpLib\Wire\AMQPBufferReader))
+#2 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AbstractChannel.php(363): PhpAmqpLib\Channel\AbstractChannel->dispatch('20,40', '\x01\x96\xA4PRECONDITION...', NULL)
+#3 /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AMQPChannel.php(681): PhpAmqpLib\Channel\AbstractChannel->wait(Array, false, 0)
+#4 /var/www/html/consumer.php(15): PhpAmqpLib\Channel\AMQPChannel->queue_declare('custom.myqueue',  in /var/www/html/vendor/php-amqplib/php-amqplib/PhpAmqpLib/Channel/AMQPChannel.php on line 224
